@@ -1,14 +1,14 @@
 """
-This program loops through the Solar Region Summaries (SRS) to determine
-dates an active region (AR) is visible on disk.  The SRS are assumed to be
-downloaded to the specified base_directory variable set at the beginning of
-this code.  The SRS are downloaded as one .txt file per day.  We used Part I
-data in the SRS which detail those ARs with associated sunspot structure.
-For each NOAA AR appearing in SRS Part I, we store the NOAA AR number, the
-date the AR first appears in the SRS, and accumulate the total number of days
-the same AR appears in the SRS.  We store these data in a comma separated
-text file ARList.txt where each line is of the format NNN,YYYMMDD,X, where
-NNNN is the four digit NOAA AR number, YYYYMMDD is the initial date of 
+This program loops through the Solar Region Summaries (SRS) to determine dates 
+an active region (AR) is visible on disk.  The SRS are assumed to be downloaded 
+to the SRS/ subdirectory underneath the specified base_directory variable set 
+at the beginning of this code.  The SRS are downloaded as one .txt file per 
+day.  We used Part I data in the SRS which detail those ARs with associated 
+sunspot structure.  For each NOAA AR appearing in SRS Part I, we store the NOAA 
+AR number, the date the AR first appears in the SRS, and accumulate the total 
+number of days the same AR appears in the SRS.  We store these data in a comma 
+separated text file ARList.txt where each line is of the format NNN,YYYMMDD,X, 
+where NNNN is the four digit NOAA AR number, YYYYMMDD is the initial date of 
 appearance, and X is an integer number of days.  
 """
 import os
@@ -27,7 +27,6 @@ for SRS_dir in SRS_dirs:
     # Loop through each text file in the folders
     for SRS_file in SRS_files:
         date = os.path.basename(SRS_file).split('S')[0] # strip off date string
-        #noaaNum = ''
         
         if (int(date) < 20100501): # only consider ARs on/after 05/01/2010 here
             pass
