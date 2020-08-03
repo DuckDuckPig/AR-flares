@@ -18,7 +18,7 @@ base_directory = '/mnt/solar_flares/AR_Dataset'
 
 Events_dirs = sorted(glob.glob(base_directory+'/Events/*')) #list of Events directories
 
-fwrite = open(base_directory+'eventList.txt','w+')
+fwrite = open(base_directory+'/eventList.txt','w+')
 
 # Loop through the list of folders containing text files
 for Events_dir in Events_dirs:
@@ -28,8 +28,8 @@ for Events_dir in Events_dirs:
     for Events_file in Events_files:
         date = ''
         peakTime = ''
-        noaaNum = ''
-        flare = ''
+        noaaNum = '    '
+        flare = '     '
 
         with open(Events_file,'r') as f:
             for line in f:
@@ -42,14 +42,14 @@ for Events_dir in Events_dirs:
                 if 'XRA' in line: # x-ray event
                     a = line.split(' ')
                     peakTime = line[18:22]
-                    noaaNum = line[-5:]
-                    flare = line[58:62]
+                    noaaNum = line[-5:].rstrip()
+                    flare = line[58:62].rstrip()
 
                     if noaaNum == '' or date == '' or flare == '':
                         pass
                     else:
                         pass
-                        fwrite.write(date + "," + peakTime + "," + noaaNum + "," + flare +",\n")
+                        fwrite.write(date + "," + peakTime + "," + noaaNum + "," + flare +"\n")
 
 
 fwrite.close()
