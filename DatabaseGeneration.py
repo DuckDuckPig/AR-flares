@@ -91,7 +91,7 @@ def latLonSeparation( nanFileArray, cfg ):
         for srsText in os.listdir(cfg["srsDirectory"] + srsFolder):
             date = srsText.split('S')[0]
             
-            # catch for wierd case where a . ends up infront of the date (no 
+            # catch for weird case where a . ends up infront of the date (no 
             # clue why it shows up)
             try:
                 int(date)
