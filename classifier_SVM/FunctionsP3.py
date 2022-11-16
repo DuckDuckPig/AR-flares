@@ -1,4 +1,6 @@
-
+"""
+Functions for extraction of magnetic complexity features from magnetograms.
+"""
 # coding: utf-8
 
 # In[2]:
