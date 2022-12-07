@@ -6,6 +6,8 @@ This repository contains code related to general manipulation of the SDO HMI dat
 ## General code
 This general code contains scripts and functions that wrangle the dataset for use in classification.  If you are using the preconfigured dataset available at `<insert link here>`, you do not need to use any of this general code.  If you wish to generate a customized dataset, e.g., with different flare size or prediction window parameters, you will need to use this code.
  - `SRS_Parse.py`: Code to parse the Solar Region Summaries and generate the `ARList.txt` file that is used by the `JSOC_Driver.py` code to download magnetograms.  This code assumes that you have downloaded the `SRS/` directory from `<insert link here>`.  Alternatively, you can simply download the `ARList.txt` file from `<insert link here>` if you are using a dataset from the same timespan (2010-2018)
+ - `JSOC_Driver.py`: Code to automate the interaction with the JSOC LookData webpage (<insert link here) to download magnetograms.  *NOTE--this code is extremely fragile and will break with browser driver changes and changes to the underlying html code used for the JSOC webpage.  This code is provided as is as a reference for those who may wish to modify the code for their purposes.  There is no guarantee that the code provided will currently work.*  This code will assume the presence of the `ARList.txt` file (see notes for `SRS_Parse.py` above).
+ - 
 
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM` folder.  This code can operate on `.fits` files or `.png` files. 
