@@ -4,6 +4,7 @@ This github repository contains codes related to solar flare prediction using SD
 This repository contains code related to general manipulation of the SDO HMI dataset (`<insert link here.`) and the use of that for two machine learning problems for flare prediction: 1) a classical machine learning problem using extracted features of magnetic complexity and a support vector machine (SVM) classifier and 2) a deep learning problem using transfer learning on the VGG network.
 
 ## General code
+ - `ER_Parse.py`: Main code to parse the Event Reports and generate the `eventList.txt` file that is used by the `customize_dataset.py` code.  This code assumes that you have downloaded the `Events/` directory or from `<insert link here>`.  Alternatively, you can simply download the `eventList.txt` file from `<insert link here>`.
 
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM` folder.  This code can operate on `.fits` files or `.png` files. 
