@@ -3,8 +3,6 @@ Functions for extraction of magnetic complexity features from magnetograms.
 """
 # coding: utf-8
 
-# In[2]:
-
 from astropy.io import fits
 from scipy.signal import *
 import numpy as np
@@ -17,9 +15,6 @@ from skimage import measure
 #Last update: Summer 2019
 # lboucher fixed unsignedSum feature 10/20/2021
 
-# In[3]:
-
-
 def fluxValues(magnetogram):
     #compute sum of positive and negative values,
     #then evaluate a signed and unsigned sum.
@@ -29,9 +24,6 @@ def fluxValues(magnetogram):
     unsignSum = posSum-negSum
     
     return posSum,negSum, signSum, unsignSum
-
-
-# In[4]:
 
 
 def gradient(image):
@@ -47,9 +39,6 @@ def gradient(image):
     return M
 
 
-# In[5]:
-
-
 def Gradfeat(image):
     #evaluate statistics of the gradient image
     res = gradient(image).flatten()
@@ -61,9 +50,6 @@ def Gradfeat(image):
     skw = skew(res)
     kurt = kurtosis(res)
     return men,strd,med,minim,maxim,skw,kurt
-
-
-# In[6]:
 
 
 def wavel(image):
@@ -84,17 +70,11 @@ def wavel(image):
     return L1e,L2e,L3e,L4e,L5e
 
 
-# In[9]:
-
-
 def extractNL(image):
     avg10 = (1. / 100)*np.ones([10,10])
     avgim = convolve2d(image,avg10,mode='same')
     out = measure.find_contours(avgim,level = 0)
     return out
-
-
-# In[10]:
 
 
 def NLmaskgen(contours,image):
@@ -108,9 +88,6 @@ def NLmaskgen(contours,image):
     return mask
 
 
-# In[11]:
-
-
 def findTGWNL(image):
     m = 0.2*np.amax(np.absolute(image))
     width = image.shape[0]
@@ -119,9 +96,6 @@ def findTGWNL(image):
     out[abs(image)>=m] = 1
     
     return out
-
-
-# In[12]:
 
 
 def curvature(contour):
@@ -148,9 +122,6 @@ def curvature(contour):
     return angles
 
 
-# In[13]:
-
-
 def bendergy(angles):
     fact = 1. / len(angles)
     count = 0.
@@ -165,9 +136,6 @@ def bendergy(angles):
         
     BE = count*fact
     return BE
-
-
-# In[14]:
 
 
 def NLfeat(image):
