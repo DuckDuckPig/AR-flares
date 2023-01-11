@@ -14,7 +14,7 @@ import sklearn.svm
 import pickle
 import pdb
 
-# Key Varibles
+# Key Variables
 
 ## User Definitions
 # Modify the following to define locations of input and output files
