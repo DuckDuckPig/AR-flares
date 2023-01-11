@@ -39,8 +39,8 @@ DESCRIPTION: This Script builds the following featureset for each Magnetogram
                Total unsigned flux
              
              These features are listed in a .csv file, followed by whether or
-             or not the AR that this Magnetiogram corrisponds flared in the
-             specified timeframe found in the lables file and the name of the 
+             or not the AR that this Magnetogram corresponds to flared in the
+             specified timeframe found in the labels file and the name of the 
              image.
                
 Created on Thu Jun  6 08:34:54 2019
@@ -63,7 +63,7 @@ from multiprocessing import Pool, Manager
 from functools import partial
 
 ## User Definitions
-# Modify the following to reflect the location of the label file (available with the dataset on Dryad
+# Modify the following to reflect the location of the label file (available with the dataset on Dryad)
 labelFile = '/mnt/solar_flares/AR_Dataset/C1.0_24hr_224_png_Labels.txt' # label file
 # Modify the following to reflect the base directory of the dataset
 datasetDir = '/mnt/solar_flares/AR_Dataset/Lat60_Lon60_Nans0_png_224/' # dataset directory location
