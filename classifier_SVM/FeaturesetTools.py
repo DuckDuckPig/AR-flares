@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Description:
-    Featureset tools, relies on FixedFunctionsP3
+    Featureset tools, relies on FunctionsP3
     
 Created on Fri Aug  9 10:09:40 2019
 
@@ -10,15 +10,14 @@ Created on Fri Aug  9 10:09:40 2019
 
 version 4.0.21
 """
-# In[1]:
-# Import Libraires and tools
+
+# Import Libraries and tools
 import numpy as np
 import FunctionsP3
 import copy
 import csv
 import os
 
-# In[2]:
 def concatVals(image):
     """
     For each image returns, in order:
@@ -48,7 +47,6 @@ def concatVals(image):
     # Concatenate and return results
     return np.concatenate((G,NL,wav,F))
 
-# In[3]:
 def equalizeTrainData(trainData,limit=None):
     """
     Function equalizes the data provided and outputs the result and the max 
@@ -98,7 +96,6 @@ def equalizeTrainData(trainData,limit=None):
     # Return the equalized data and the equalization factors/weights
     return Data, eqFactors
 
-# In[4]:
 def equalizeNewData(newData,eqFactors):
     """
     Function equalizes the data provided using a 2D np.array of weights that 
@@ -125,7 +122,6 @@ def equalizeNewData(newData,eqFactors):
     # Return the equalized data
     return Data
 
-# In[5]:
 def listAllAR(masterFile):
     """
     Function generates and returns a list of all of the active regions in a 
@@ -157,7 +153,6 @@ def listAllAR(masterFile):
     # Return Results
     return ARList
 
-# In[6]:
 def listEntries(masterFile,ARList):
     """
     Given a list of active regions and the filenmae of a featureset, this
@@ -186,7 +181,6 @@ def listEntries(masterFile,ARList):
     # Return Results
     return IndexList
 
-# In[10]:
 def createARBasedSets(masterFile,trainData,testData,valadationData,weightData,
                       testARList,valadationARList,limit=None,
                       weightDataExists=True,testArListExists=True,
@@ -330,7 +324,6 @@ def createARBasedSets(masterFile,trainData,testData,valadationData,weightData,
     writeMe(test_set,testData,correctName=True)
     writeMe(val_set,valadationData,correctName=True)
     
-# In[12]:
 def writeMe(data,path,emptyFirst = True, replaceLabel = False,correctName = False):
     """
     Function writes a new featureset using the data provided. This can be used
