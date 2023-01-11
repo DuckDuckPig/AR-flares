@@ -6,6 +6,7 @@ This repository contains code related to general manipulation of the SDO HMI dat
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM/` folder.  This code can operate on `.fits` files or `.png` files. 
 
+Requirements: <put .yml file here and delete the bullets below>
 Requires:
  - `os`
  - `glob`
