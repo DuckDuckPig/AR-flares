@@ -3,26 +3,10 @@ This github repository contains codes related to solar flare prediction using SD
 
 This repository contains code related to general manipulation of the SDO HMI dataset (`<insert link here.`) and the use of that for two machine learning problems for flare prediction: 1) a classical machine learning problem using extracted features of magnetic complexity and a support vector machine (SVM) classifier and 2) a deep learning problem using transfer learning on the VGG network.
 
+Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the SVM classification code, the VGG classification code, and the general code as described below.  Some packages may not be necessary for some code (e.g., tensorflow is not necessary for the SVM classification but is necessary for the VGG classification).
+
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM/` folder.  This code can operate on `.fits` files or `.png` files. 
-
-Requirements: `<put .yml file here and delete the bullets below>`
-Requires:
- - `os`
- - `glob`
- - `csv`
- - `astropy` (tested with version 4.2.1)
- - `imageio` (tested with version 2.9.0)
- - `multiprocessing` and `functools`
- - `numpy` (tested with version 1.19.2)
- - `copy`
- - `scipy` (tested with version 1.4.1)
- - `pywt` (tested with version 1.1.1)
- - `skimage` (tested with version 0.16.2)
- - `sklearn` (tested with version 0.24.2)
- - `pickle` (tested with 0.7.5)
-
-Code:
  - `BuidMasterFeatureSet_mp.py`: Main code to extract 29 magnetic complexity features from HMI magnetograms.  This code is implemented using the python multiprocessing package, but can be modified for serial implementation.
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
    - Outputs a `csv` file with the complexity features, labels (regression and classification), and filename.  
@@ -40,8 +24,7 @@ Code:
 ## VGG Classification
 Code for the transfer learning of VGG is included in the `classifier_VGG/` folder.  This code can operate on `.fits` files or `.png` files.
 
-Requires:
- - `numpy` (tested with version 1.19.2)
+Requirements: `<put .yml file here>`
  
 Code:
  - `Build_keras_dataframe_files.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  This code assumes that the train, test, and validation data files exist as output from `AR_Classifier_weighted.py`.  This code does a simple parsing of those files and outputs `csv` files with columns `filename, class`.  
