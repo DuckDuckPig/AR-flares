@@ -14,21 +14,21 @@ import sklearn.svm
 import pickle
 import pdb
 
-# Key Variables
+# Key Varibles
 
 ## User Definitions
 # Modify the following to define locations of input and output files
-Folder = 'classifier_SVM/' # folder in which to save results
+Folder = './' # folder in which to save results with trailing /
 class_type = 'linear' # 'linear' or 'rbf' kernel for SVM classifier
 suffix = '_png_224' # optional suffix for saving different models, leave as '' for no suffix
-classFile  = 'Lat60_Long60_Nans0_C1.0_24hr'+suffix+'_features.csv' # file containing extracted features
+classFile  = 'Lat60_Lon60_Nans0_C1.0_24hr'+suffix+'_features.csv' # file containing extracted features
 trainDataName  = Folder+'Train_Data_by_AR'+suffix+'.csv' # file with train data, will be read in if exists or created if doesn't
 testDataName   = Folder+'Test_Data_by_AR'+suffix+'.csv' # file with test data, will be read in if exists or created if doesn't
 valDataName    = Folder+'Validation_data_by_AR'+suffix+'.csv' # file with val data, will be read in if exists or created if doesn't
 weightData = Folder+'Weight_Lat60_Lon60_Nans0_C1.0_24hr'+suffix+'.txt' #weights used for equalization of features, will be created from analysis of train data if doesn't exist
-outfile = Folder+'/ARClassifierStats_weighted_trainvaltest_'+class_type+suffix+'.txt' # output file for statistics; will also be used to define the .pickle filename
-testARList = 'List_of_AR_in_Test_Data_by_AR.csv' #list of active regions in TestData
-valARList  = 'List_of_AR_in_Validation_data_by_AR.csv' #list of active regions in ValData
+outfile = Folder+'ARClassifierStats_weighted_trainvaltest_'+class_type+suffix+'.txt' # output file for statistics; will also be used to define the .pickle filename
+testARList = 'List_of_AR_in_Test_Data_by_AR.csv' #list of active regions in TestData, will be created by randomly assigning 10% of ARs if does not exist in the location specified
+valARList  = 'List_of_AR_in_Validation_data_by_AR.csv' #list of active regions in ValData, will be created by randomly asigning 10% of ARs if does not exist in the location specified
 ## End User Definitions
 
 # Generate filenames

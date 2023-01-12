@@ -115,7 +115,7 @@ if __name__=='__main__':
     Labels = Manager().dict(Labels)
 
     # Find all data files
-    print('Finding image files')
+    print('Finding image files (this may take a while)')
     filenames = sorted(glob.glob(datasetDir+'/*/*.'+file_extension))
     fnums = range(len(filenames))
 

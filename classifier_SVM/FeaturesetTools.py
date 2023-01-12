@@ -77,7 +77,7 @@ def equalizeTrainData(trainData,limit=None):
             for j in range(dataLength):
                 featureValues[j] = Data[j][i] * 1.0
             eqFactors[i,0] = np.amin(featureValues)
-            5
+             
             # Offset based on that min and find the new max
             for j in range(dataLength):
                 Data[j][i] = Data[j][i] - eqFactors[i,0]
@@ -264,6 +264,7 @@ def createARBasedSets(masterFile,trainData,testData,valadationData,weightData,
     if testArListExists and os.path.exists(testARList):
         testARListData = np.genfromtxt(testARList, dtype = int)
     else:
+        print('Creating a new test data split!!!')
         if testSize >= 1:
             testSize = testSize / 100.
         ARListData = listAllAR(masterFile)
@@ -279,6 +280,7 @@ def createARBasedSets(masterFile,trainData,testData,valadationData,weightData,
     if valadationARListExists and os.path.exists(valadationARList):
         valadationARListData = np.genfromtxt(valadationARList, dtype = int)
     else:
+        print('Creating a new validation data split!!!')
         if valadationSize >= 1:
             valadationSize = valadationSize / 100.
         ARListData = listAllAR(masterFile)
