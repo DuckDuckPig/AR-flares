@@ -35,7 +35,7 @@ Code:
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
    - Outputs three `csv` files with train, test, and validation data, a weight file for equalization of features, a `txt` file wih classifier statistics, and a `pickle` file with the trained model.  
    - Relies on `FeaturesetTools.py`.  
-   - Requires the feature file output by `BuildMasterFeatureSet.py` or available on Dryad (`Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv` or `Lat60_Lon60_Nans0_C1.0_24hr_features.csv`) and the list of test and val active regions `List_of_AR_in_Test_Data_by_AR.csv`, `List_of_AR_in_Train_data_by_AR.csv`, and `List_of_AR_in_Validation_data_by_AR.csv` available on Dryad.
+   - Requires the feature file output by `BuildMasterFeatureSet.py` or available on Dryad (`Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv` or `Lat60_Lon60_Nans0_C1.0_24hr_features.csv`) and the list of test and val active regions `List_of_AR_in_Test_Data_by_AR.csv`, `List_of_AR_in_Train_data_by_AR.csv`, and `List_of_AR_in_Validation_data_by_AR.csv` available on Dryad.  Note--if the list of test and val active regions are not available, the code will randomly select 10% of active regions for the test and val sets; this will not result in the split as the files available on Dryad.
  
 ## VGG Classification
 Code for the transfer learning of VGG is included in the `classifier_VGG/` folder.  This code can operate on `.fits` files or `.png` files.
