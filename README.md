@@ -14,9 +14,9 @@ Requirements: `<put .yml file here>`  Note--this environment file specifies all 
 
  - `Buid_Featureset.py`: Main code to extract 29 magnetic complexity features from HMI magnetograms.  This code is implemented using the python multiprocessing package, but can be modified for serial implementation.
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
-   - Outputs a `csv` file with the complexity features, labels (regression and classification), and filename.  
+   - Outputs a `FeatureFile` in `csv` format with the complexity features, labels (regression and classification), and filename.  
    - Relies on `FeaturesetTools.py`.  
-   - Requires the label file (`C1.0_24hr_224_png_Labels.txt` or `C1.0_24hr_Labels.txt`) and the dataset (reduced resolution `png` files `<insert link here>` or the full resolution `fits` files `<insert link here>`).  
+   - Requires the `AR Dataset`: the `Flare_Labels`file (`C1.0_24hr_224_png_Labels.txt` or `C1.0_24hr_Labels.txt`, available here under `classifier_SVM/` or on Dryad at `<insert link here>` (reduced resolution) or `<insert link here>` (full resolution)) and the corresponding `SDO HMI AR Images` (reduced resolution `png` files `<insert link here>` or the full resolution `fits` files `<insert link here>`).  
  - `FeaturesetTools.py`: Helper functions for feature extraction.  
    - Relies on `FunctionsP3.py`.
  - `FunctionsP3.py`: Functions to extract magnetic complexity features.
