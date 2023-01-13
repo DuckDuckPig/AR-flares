@@ -29,6 +29,8 @@ Requirements: `<put .yml file here>`  Note--this environment file specifies all 
 ## VGG Classification
 Code for the transfer learning of VGG is included in the `classifier_VGG/` folder.  This code can operate on `.fits` files or `.png` files.
 
+![VGG classifier flowchart](/images/VGG_classifier_flowchart.png?raw=true "VGG Classifier Flowchart")
+
 Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the VGG classification code only.
  
 Code:
