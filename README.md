@@ -10,8 +10,6 @@ Code for the SVM classifier is included in the `classifier_SVM/` folder.  This c
 
 ![SVM classifier flowchart](/images/SVM_classifier_flowchart.png?raw=true "SVM Classifier Flowchart")
 
-Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the SVM classification code only.
-
  - `Buid_Featureset.py`: Main code to extract 29 magnetic complexity features from HMI magnetograms.  This code is implemented using the python multiprocessing package, but can be modified for serial implementation.
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
    - Outputs a "FeatureFile" in `csv` format with the complexity features, labels (regression and classification), and filename.  The "FeatureFile" for the preconfigured reduced resolution dataset `Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv` is available on Dryad at `<insert link here>` and for the full resolution dataset `Lat60_Lon60_Nans0_C1.0_24hr_features.csv` is available on Dryad at `<insert link here>`.
@@ -31,8 +29,6 @@ Code for the transfer learning of VGG is included in the `classifier_VGG/` folde
 
 ![VGG classifier flowchart](/images/VGG_classifier_flowchart.png?raw=true "VGG Classifier Flowchart")
 
-Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the VGG classification code only.
- 
 Code:
  - `Build_dataframes.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
@@ -48,8 +44,6 @@ General code for wrangling the dataset for use in classification are included in
 
 ![Dataset flowchart](/images/dataset_flowchart.png?raw=true "Dataset Flowchart")
 
-Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the general code only.
- 
 Code:
  - `SRS_Parse.py`: Code to parse the Solar Region Summaries and generate the `ARList.txt` file that is used by the `JSOC_Driver.py` code to download magnetograms.  This code assumes that you have downloaded the `SRS/` directory from `<insert link here>`.  Alternatively, you can simply download the `ARList.txt` file from `<insert link here>` if you are using a dataset from the same timespan (2010-2018)
  - `JSOC_Driver.py`: Code to automate the interaction with the JSOC LookData webpage (<insert link here) to download magnetograms.  *NOTE--this code is extremely fragile and will break with browser driver changes and changes to the underlying html code used for the JSOC webpage.  This code is provided as is as a reference for those who may wish to modify the code for their purposes.  There is no guarantee that the code provided will currently work.*  This code will assume the presence of the `ARList.txt` file (see notes for `SRS_Parse.py` above).
