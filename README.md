@@ -34,7 +34,7 @@ Code for the transfer learning of VGG is included in the `classifier_VGG/` folde
 Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the VGG classification code only.
  
 Code:
- - `Build_keras_dataframe_files.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  This code assumes that the train, test, and validation data files exist as output from `AR_Classifier_weighted.py`.  This code does a simple parsing of those files and outputs `csv` files with columns `filename, class`.  
+ - `Build_dataframes.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  
 
 ## General code
 General code for wrangling the dataset for use in classification are included in the `general_code/` folder.  If you are using the preconfigured dataset available at `<insert link here>`, you do not need to use any of this general code.  If you wish to download and/or generate a customized dataset, e.g., with different flare size or prediction window parameters, you will need to use some of this code.
