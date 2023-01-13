@@ -46,6 +46,8 @@ Code:
 ## General code
 General code for wrangling the dataset for use in classification are included in the `general_code/` folder.  If you are using the preconfigured dataset available at `<insert link here>`, you do not need to use any of this general code.  If you wish to download and/or generate a customized dataset, e.g., with different flare size or prediction window parameters, you will need to use some of this code.
 
+![Dataset flowchart](/images/dataset_flowchart.png?raw=true "Dataset Flowchart")
+
 Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the general code only.
  
 Code:
