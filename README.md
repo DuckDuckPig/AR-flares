@@ -35,6 +35,9 @@ Requirements: `<put .yml file here>`  Note--this environment file specifies all 
  
 Code:
  - `Build_dataframes.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  
+   - Edit the lines under `## User Definitions` to specify paths and other parameters.  
+   - Outputs "Dataframes" in `csv` format with filename and classification label in the format expected for a tensorflow dataloader.  The "Dataframes" for the preconfigured reduced resolution dataset `Test_Data_by_AR_png_224.csv`, `Train_Data_by_AR_png_224.csv`, and `Validation_Data_by_AR_png_224.csv` are available on Dryad at `<insert link here>` and for the full resolution dataset `Test_Data_by_AR.csv`, `Train_Data_by_AR.csv`, and `Validation_Data_by_AR.csv` are available on Dryad at `<insert link here>`.
+   - Requires the the "Flare_Labels" file from the "AR Dataset" (`C1.0_24hr_224_png_Labels.txt` or `C1.0_24hr_Labels.txt`, available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files)) and the "DataSplits" (lists of test and val active regions) `List_of_AR_in_Test_Data_by_AR.csv`, `List_of_AR_in_Train_data_by_AR.csv`, and `List_of_AR_in_Validation_data_by_AR.csv` available on Dryad (`<insert link here>` (reduced resolution) or `<insert link here>` (full resolution)).  
 
 ## General code
 General code for wrangling the dataset for use in classification are included in the `general_code/` folder.  If you are using the preconfigured dataset available at `<insert link here>`, you do not need to use any of this general code.  If you wish to download and/or generate a customized dataset, e.g., with different flare size or prediction window parameters, you will need to use some of this code.
