@@ -8,6 +8,8 @@ Requirements: `<put .yml file here>`  Note--this environment file specifies all 
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM/` folder.  This code can operate on `.fits` files or `.png` files. 
 
+![SVM classifier flowchart](/images/SVM_classifier_flowchart.png?raw=true "SVM Classifier Flowchart")
+
 Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the SVM classification code only.
 
  - `Buid_Featureset.py`: Main code to extract 29 magnetic complexity features from HMI magnetograms.  This code is implemented using the python multiprocessing package, but can be modified for serial implementation.
