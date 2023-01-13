@@ -3,7 +3,7 @@ This github repository contains codes related to solar flare prediction using SD
 
 This repository contains code related to general manipulation of the SDO HMI dataset (`<insert link here.`) and the use of that for two machine learning problems for flare prediction: 1) a classical machine learning problem using extracted features of magnetic complexity and a support vector machine (SVM) classifier and 2) a deep learning problem using transfer learning on the VGG network.
 
-Requirements: `<put .yml file here>`  Note--this environment file specifies all packages necessary for implementation of the SVM classification code, the VGG classification code, and the general code as described below.  Some packages may not be necessary for some code (e.g., tensorflow is not necessary for the SVM classification but is necessary for the VGG classification).
+Requirements: [requirements.yml](requirements.yml)  Note--this environment file specifies all packages necessary for implementation of the SVM classification code, the VGG classification code, and the general code as described below.  Some packages may not be necessary for some code (e.g., tensorflow is not necessary for the SVM classification but is necessary for the VGG classification).
 
 ## SVM Classification
 Code for the SVM classifier is included in the `classifier_SVM/` folder.  This code can operate on `.fits` files or `.png` files. 
