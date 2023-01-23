@@ -14,7 +14,7 @@ dependencies:
   - pandas=1.5.2
   - cudnn=8.1.0
   - cudatoolkit=11.2
-pip:
-  - notebook==6.5.2
-  - tensorflow==2.11.0
-prefix: /home/lboucher/anaconda3/envs/HMI_classification
+  - pip=22.3.1
+  - pip:
+    - notebook==6.5.2
+    - tensorflow==2.11.0
