@@ -47,6 +47,7 @@ General code for wrangling the dataset for use in classification are included in
 ![Dataset flowchart](/images/dataset_flowchart.png?raw=true "Dataset Flowchart")
 
 Code:
+
 Code to configure a dataset according to latitute, longitude, NaNs, minimum flare size, and/or time-to-flare:
  - `customize_dataset.py`: Code to generate a customized dataset based on flare size, flare prediction window, latitude, longitude, and number of NaNs.  This code assumes that you have downloaded all magnetogram images within the timespan of interest for the dataset.  This code will use an existing `eventList.txt` file or generate one for you if it does not exist; generation of an `eventList.txt` file assumes the existence of the `Events/` directory structure available for download at `<insert link here>`. You can download the `eventList.txt` file for the 2010-2018 timespan at `<insert link here>`.  This code will assume the existence of the `SRS/` directory structures as available for download at `<insert link here>`.  This code will copy the magnetogram images that satisfy the given parameters to a user-specified directory and generate a label file mapping those magnetograms to their flaring behavior.  
    - Edit the lines...
