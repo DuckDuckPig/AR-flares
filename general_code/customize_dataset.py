@@ -37,8 +37,6 @@ cfg = {
        'nans'         : 0,    # number of nans allowed in images 
        'lon'          : 60,   # Longitude of AR centroid in degrees
        'lat'          : 60,   # Latitude of AR centroid in degrees
-       'newDirectory' : True, # Flag to duplicate data into new directory, 
-                              # false moves data in path, true creates new data
        'newDataDirectory' : '/mnt/solar_flares/AR_Dataset/Lat60_Lon60_Nans0/', # String for new directory path with trailing /
        'dataDirectory': '/mnt/solar_flares/AR_Dataset/active_regions/', # Path to fits data in NOAA AR number folders with trailing /
        'srsDirectory' : '/mnt/solar_flares/AR_Dataset/SRS/', # Path to SRS data with trailing /
@@ -190,9 +188,9 @@ def createDataset(nanFileArray, latLonFileArray, cfg ):
                 
             # Check that the file isn't one of our NaN or Lat/Lon files    
             if (newFit not in nanFileArray) and (dayFit not in latLonFileArray):
-                if cfg["newDirectory"] and (not os.path.exists(cfg["newDataDirectory"]+direc)):
+                if not os.path.exists(cfg["newDataDirectory"]+direc):
                     os.mkdir(cfg['newDataDirectory']+direc)
-                if cfg["newDirectory"] and (not os.path.exists(cfg["newDataDirectory"]+direc+'/'+newFit)):
+                if not os.path.exists(cfg["newDataDirectory"]+direc+'/'+newFit):
                     shutil.copy(cfg["dataDirectory"]+direc+'/'+fit,\
                                 cfg["newDataDirectory"]+'/'+direc+'/'+newFit)
                     num_filesCopied = num_filesCopied + 1
@@ -202,10 +200,6 @@ def createDataset(nanFileArray, latLonFileArray, cfg ):
                     num_filesAlreadyThere = num_filesAlreadyThere + 1
                     j = j+1
                     f_files.write(newFit+'\n')
-                        
-                #elif not os.path.exists(cfg["newDataDirectory"]+direc+'/'+fit):
-                    #shutil.move(cfg["dataDirectory"]+'/'+direc+'/'+fit,\
-                    #            cfg["newDataDirectory"]+'/'+direc+'-'+str(fit))
             else:
                 pass
         print('    Copied '+str(i)+'/'+str(num_files)+' files and '+\
