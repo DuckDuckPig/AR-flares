@@ -12,15 +12,14 @@ import numpy as np
 
 ## User Definitions
 # Modify the following to reflect the location of the label file (available with the dataset on Dryad)
-labelFile = '/mnt/solar_flares/AR_Dataset/C1.0_24hr_224_png_Labels.txt' # label file
-# Modify the following to reflect the location of the list of ARs in test and validation (available with the dataset on Dryad)
+labelFile = '/mnt/solar_flares/AR_Dataset/C1.0_24hr_Labels.txt' # label file
 # Modify the following to reflect the location of the list of ARs in test and validation (available with the dataset on Dryad)
 testARList = 'List_of_AR_in_Test_Data_by_AR.csv' #list of active regions in TestData
 valARList  = 'List_of_AR_in_Validation_data_by_AR.csv' #list of active regions in ValData
 # Modify the following to reflect the desired location of the dataframe files output by this code
-testdata_file = 'Test_Data_by_AR_png_224.csv'
-valdata_file = 'Validation_Data_by_AR_png_224.csv'
-traindata_file = 'Train_Data_by_AR_png_224.csv'
+testdata_file = 'Test_Data_by_AR.csv'
+valdata_file = 'Validation_Data_by_AR.csv'
+traindata_file = 'Train_Data_by_AR.csv'
 ## End User Definitions
 
 with open(testARList) as f:
