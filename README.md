@@ -79,4 +79,4 @@ Code to configure a dataset according to latitute, longitude, NaNs, minimum flar
    - Edit the lines under `# User define variables:` to specify paths and other parameters.  
    - Downloads and stores the "SDO HMI AR Images" associated with the "ARList" file.
    - Relies on the `selenium` package (not included in the requirements file above) and a driver appropriate for the browser (e.g., `geckodriver` for firefox).
-   - Requires the "ARList" file output by `SRS_Parse.py` or available on Dryad at `<insert link here>` or `<insert link here>`
+   - Requires the "ARList" file output by `SRS_Parse.py` or available in the `general_code/` directory here.
