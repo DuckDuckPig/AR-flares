@@ -19,7 +19,7 @@ Code for the SVM classifier is included in the `classifier_SVM/` folder.  This c
    - Relies on `FeaturesetTools.py`.  
    - Requires the "AR Dataset": 
      - The "Flare_Labels" file (`C1.0_24hr_224_png_Labels.txt` or `C1.0_24hr_Labels.txt`, available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files)).  It is recommended that you save the "Flare_Labels" file in the base `AR-flares/` directory, although subsequent code will allow you to specify the path to those files.
-     - The corresponding "SDO HMI AR Images" available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files)).  The location of the "SDO HMI AR Images" will be specified in subsequent code.  You may save those data in the base `AR-flares/` directory or any other location.
+     - The corresponding "SDO HMI AR Images" available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files).  The location of the "SDO HMI AR Images" will be specified in subsequent code.  You may save those data in the base `AR-flares/` directory or any other location.
  - `FeaturesetTools.py`: Helper functions for feature extraction.  
    - Relies on `FunctionsP3.py`.
  - `FunctionsP3.py`: Functions to extract magnetic complexity features.
@@ -29,7 +29,7 @@ Code for the SVM classifier is included in the `classifier_SVM/` folder.  This c
    - Relies on `FeaturesetTools.py`.  
    - Requires the "FeatureFile" output by `Build_Featureset.py` and the "DataSplits" (lists of test and val active regions) available on Dryad (details below)
      - The "FeatureFile" for the preconfigured reduced resolution dataset `Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv` is available on Dryad at `<insert link here>` and for the full resolution dataset `Lat60_Lon60_Nans0_C1.0_24hr_features.csv` is available on Dryad at `<insert link here>`.  It is recommended that you save the "FeatureFile" in the same `classifier_SVM/` directory (i.e., the same directory as the SVM code), although subsequent code will allow you to specify the path to those files.
-     - The "DataSplits" (lists of test and val active regions) `List_of_AR_in_Test_Data_by_AR.csv`, `List_of_AR_in_Train_data_by_AR.csv`, and `List_of_AR_in_Validation_data_by_AR.csv` are available on Dryad (`<insert link here>` (reduced resolution) or `<insert link here>` (full resolution)).   It is recommended that you save the "DataSplits" files in the base `AR-flares/` directory, although subsequent code will allow you to specify the path to those files. 
+     - The "DataSplits" (lists of test and val active regions) `List_of_AR_in_Test_Data_by_AR.csv`, `List_of_AR_in_Train_data_by_AR.csv`, and `List_of_AR_in_Validation_data_by_AR.csv` are available on Dryad (`<insert link here>` (reduced resolution) or `<insert link here>` (full resolution).   It is recommended that you save the "DataSplits" files in the base `AR-flares/` directory, although subsequent code will allow you to specify the path to those files. 
      - Note--if the "DataSplits" are not available to the code, the code will randomly select 10% of active regions for the test and val sets; this will not result in the same split as the files available on Dryad.
  
 ## VGG Classification
