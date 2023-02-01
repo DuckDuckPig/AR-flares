@@ -38,7 +38,7 @@ Code for the transfer learning of VGG is included in the `classifier_VGG/` folde
 ![VGG classifier flowchart](/images/VGG_classifier_flowchart.png?raw=true "VGG Classifier Flowchart")
 
 Code:
- - `Build_dataframes.py`: Code to generate files that can be read in as dataframes for the keras dataloaders.  
+ - `Build_dataframes.py`: Code to generate files that can be read in as dataframes for the tensorflow dataloaders.  
    - Edit the lines under `## User Definitions` to specify paths and other parameters.  
    - Outputs "Dataframes" in `csv` format with filename and classification label in the format expected for a tensorflow dataloader.  
      - The "Dataframes" for the preconfigured reduced resolution dataset `Test_Data_by_AR_png_224.csv`, `Train_Data_by_AR_png_224.csv`, and `Validation_Data_by_AR_png_224.csv` are available on Dryad at `<insert link here>` and for the full resolution dataset `Test_Data_by_AR.csv`, `Train_Data_by_AR.csv`, and `Validation_Data_by_AR.csv` are available on Dryad at `<insert link here>`.  It is recommended that you save the "Dataframes" in the `classifier_VGG/` directory (i.e., the same directory as the VGG code), although subsequent code will allow you to specify the path to those files.
