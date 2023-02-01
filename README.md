@@ -19,7 +19,7 @@ Code for the SVM classifier is included in the `classifier_SVM/` folder.  This c
    - Relies on `FeaturesetTools.py`.  
    - Requires the "AR Dataset": 
      - The "Flare_Labels" file (`C1.0_24hr_224_png_Labels.txt` or `C1.0_24hr_Labels.txt`, available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files).  It is recommended that you save the "Flare_Labels" file in the base `AR-flares/` directory, although subsequent code will allow you to specify the path to those files.
-     - The corresponding "SDO HMI AR Images" available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files).  The location of the "SDO HMI AR Images" will be specified in subsequent code.  You may save those data in the base `AR-flares/` directory or any other location.
+     - The corresponding "SDO HMI AR Images" available on Dryad at `<insert link here>` (reduced resolution `png` files) or `<insert link here>` (full resolution `fits` files).  The location of the "SDO HMI AR Images" will be specified by the user in subsequent code.  You may save those data in the base `AR-flares/` directory or any other location.
  - `FeaturesetTools.py`: Helper functions for feature extraction.  
    - Relies on `FunctionsP3.py`.
  - `FunctionsP3.py`: Functions to extract magnetic complexity features.
