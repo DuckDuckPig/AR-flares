@@ -1,10 +1,55 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug  9 12:39:20 2019
+#-------------------------------------------------------------------------------
+# AR_Classifier.py
+#
+# Main code for the SVM classifier.
+#
+#    - Edit the lines under ## User Definitions to specify paths and other 
+#      parameters.
+#    - Outputs three csv feature files with train, test, and validation data 
+#      (i.e., the magnetic complexity features, filename, and label); a txt file 
+#      weight file used for equalization of features, a txt file performance" 
+#      wih classifier statistics, and a pickle file model with the trained model.
+#     - Relies on FeaturesetTools.py.
+#     - Requires the feature file output by Build_Featureset.py and the data
+#       splits (lists of test and val active regions) available on Dryad 
+#       (details below)
+#       - The feature file for the preconfigured reduced resolution dataset 
+#         Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv is available on Dryad 
+#         at <insert link here> and for the full resolution dataset 
+#         Lat60_Lon60_Nans0_C1.0_24hr_features.csv is available on Dryad at 
+#         <insert link here>. It is recommended that you save the feature file
+#         in the same classifier_SVM/ directory (i.e., the same directory as the 
+#         SVM code), although subsequent code will allow you to specify the path 
+#         to those files.
+#       - The data splits (lists of test and val active regions) 
+#         List_of_AR_in_Test_Data_by_AR.csv, List_of_AR_in_Train_data_by_AR.csv, 
+#         and List_of_AR_in_Validation_data_by_AR.csv are available on Dryad 
+#         (<insert link here> (reduced resolution) or <insert link here> (full 
+#         resolution). It is recommended that you save the data splits files in 
+#         the base AR-flares/ directory, although subsequent code will allow you 
+#         to specify the path to those files.
+#       - Note--if the data splits are not available to the code, the code will 
+#         randomly select 10% of active regions for the test and val sets; this 
+#         will not result in the same split as the files available on Dryad.
+#
+# References:
+# [1] <Put reference to dataset paper here>
+#
+# Copyright 2022 Laura Boucheron, Jeremy Grajeda, Ellery Wuest
+# This file is part of AR-flares
+# 
+# AR-flares is free software: you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation, either version 3 of the License, or (at your option) any later 
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY 
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with 
+# AR-flares. If not, see <https://www.gnu.org/licenses/>. 
 
-@author: jgra
-"""
 # Import Libraries and Tools
 import os
 import csv

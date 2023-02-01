@@ -1,7 +1,62 @@
-"""
-Functions for extraction of magnetic complexity features from magnetograms.
-"""
-# coding: utf-8
+#-------------------------------------------------------------------------------
+# FunctionsP3.py
+#
+# Functions for extraction of magnetic complexity features from magnetograms.
+#
+#             GRADIENT FEATURES
+#               Gradient mean
+#               Gradient std
+#               Gradient median
+#               Gradient min
+#               Gradient max
+#               Gradient skewness
+#               Gradient kurtosis
+#             NEUTRAL LINE FEATURES
+#               NL length
+#               NL no. fragments
+#               NL gradient-weighted len
+#               NL curvature mean
+#               NL curvature std
+#               NL curvature median
+#               NL curvature min
+#               NL curvature max
+#               NL bending energy mean
+#               NL bending energy std
+#               NL bending energy median
+#               NL bending energy min
+#               NL bending energy max
+#             WAVELET FEATURES
+#               Wavelet Energy L1
+#               Wavelet Energy L2
+#               Wavelet Energy L3
+#               Wavelet Energy L4
+#               Wavelet Energy L5
+#             FLUX FEATURES
+#               Total positive flux
+#               Total negative flux
+#               Total signed flux
+#               Total unsigned flux
+#
+# References:
+# [1] A. Al-Ghraibah, L. E. Boucheron, and R. T. J. McAteer, "An automated
+#     approach to ranking photospheric proxies of magnetic energy buildup,"
+#     Astronomy & Astrophysics, vol. 579, p. A64, 2015.
+# [2] <Put reference to dataset paper here>
+#
+# Copyright 2022 Laura Boucheron, Jeremy Grajeda, Ellery Wuest
+# This file is part of AR-flares
+#
+# AR-flares is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# AR-flares. If not, see <https://www.gnu.org/licenses/>.
 
 from astropy.io import fits
 from scipy.signal import *

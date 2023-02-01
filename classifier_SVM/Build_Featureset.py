@@ -1,57 +1,95 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-DESCRIPTION: This Script builds the following featureset for each Magnetogram 
-             in the specified folder:
-             
-             GRADIENT FEATURES
-               Gradient mean
-               Gradient std
-               Gradient median
-               Gradient min
-               Gradient max
-               Gradient skewness	
-               Gradient kurtosis	
-             NEUTRAL LINE FEATURES
-               NL length	
-               NL no. fragments
-               NL gradient-weighted len
-               NL curvature mean
-               NL curvature std
-               NL curvature median
-               NL curvature min
-               NL curvature max
-               NL bending energy mean
-               NL bending energy std
-               NL bending energy median
-               NL bending energy min
-               NL bending energy max
-             WAVELET FEATURES
-               Wavelet Energy L1
-               Wavelet Energy L2
-               Wavelet Energy L3
-               Wavelet Energy L4
-               Wavelet Energy L5
-             FLUX FEATURES
-               Total positive flux
-               Total negative flux
-               Total signed flux
-               Total unsigned flux
-             
-             These features are listed in a .csv file, followed by whether or
-             or not the AR that this Magnetogram corresponds to flared in the
-             specified timeframe found in the labels file and the name of the 
-             image.
+#-------------------------------------------------------------------------------
+# Build_Featureset.py
+#
+# Main code to extract 29 magnetic complexity features from HMI magnetograms. 
+# This code is implemented using the python multiprocessing package, but can be 
+# modified for serial implementation.
+#             GRADIENT FEATURES
+#               Gradient mean
+#               Gradient std
+#               Gradient median
+#               Gradient min
+#               Gradient max
+#               Gradient skewness	
+#               Gradient kurtosis	
+#             NEUTRAL LINE FEATURES
+#               NL length	
+#               NL no. fragments
+#               NL gradient-weighted len
+#               NL curvature mean
+#               NL curvature std
+#               NL curvature median
+#               NL curvature min
+#               NL curvature max
+#               NL bending energy mean
+#               NL bending energy std
+#               NL bending energy median
+#               NL bending energy min
+#               NL bending energy max
+#             WAVELET FEATURES
+#               Wavelet Energy L1
+#               Wavelet Energy L2
+#               Wavelet Energy L3
+#               Wavelet Energy L4
+#               Wavelet Energy L5
+#             FLUX FEATURES
+#               Total positive flux
+#               Total negative flux
+#               Total signed flux
+#               Total unsigned flux
+#             
+#
+#  - Edit the lines under ## User Definitions to specify paths and other 
+#    parameters.
+#  - Outputs a feature file in csv format with the complexity features, labels 
+#    (regression and classification), and filename.
+#     - The feature file for the preconfigured reduced resolution dataset 
+#       Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv is available on Dryad 
+#       at <insert link here> and for the full resolution dataset 
+#       Lat60_Lon60_Nans0_C1.0_24hr_features.csv is available on Dryad at 
+#       <insert link here>. It is recommended that you save the feature file in 
+#       the classifier_SVM/ directory (i.e., the same directory as the SVM 
+#       code), although subsequent code will allow you to specify the path to 
+#       those files.
+#  - Relies on FeaturesetTools.py.
+#  - Requires the AR Dataset:
+#     - The flare labesl file (C1.0_24hr_224_png_Labels.txt or 
+#       C1.0_24hr_Labels.txt, available on Dryad at <insert link here> (reduced 
+#       resolution png files) or <insert link here> (full resolution fits 
+#       files). It is recommended that you save the flare labels file in the 
+#       base AR-flares/ directory, although subsequent code will allow you to 
+#       specify the path to those files.
+#     - The corresponding SDO HMI AR Images available on Dryad at <insert link 
+#       here> (reduced resolution png files) or <insert link here> (full 
+#       resolution fits files). The location of the SDO HMI AR Images will be 
+#       specified by the user in subsequent code. You may save those data in 
+#       the base AR-flares/ directory or any other location.
+# 
+# Modified Nov 6 2020 by lboucher to use multiprocessing
+# Modified Sep 23 2022 by lboucher to output both regression labels and 
+#                                  classification labels
+#
+# References:
+# [1] A. Al-Ghraibah, L. E. Boucheron, and R. T. J. McAteer, "An automated
+#     approach to ranking photospheric proxies of magnetic energy buildup,"
+#     Astronomy & Astrophysics, vol. 579, p. A64, 2015.
+# [2] <Put reference to dataset paper here>
+#
+# Copyright 2022 Laura Boucheron, Jeremy Grajeda, Ellery Wuest
+# This file is part of AR-flares
+#
+# AR-flares is free software: you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation, either version 3 of the License, or (at your option) any later
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# AR-flares. If not, see <https://www.gnu.org/licenses/>.
                
-Created on Thu Jun  6 08:34:54 2019
-
-@author: jgra
-
-
-Modified Nov 6 2020 by lboucher to use multiprocessing
-Modified Sep 23 2022 by lboucher to output both regression labels and classification labels
-"""
-
 import os
 import glob
 import csv
