@@ -1,14 +1,25 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb  6 12:45:19 2018
+# Created on Tue Feb  6 12:45:19 2018
+#
+# Script for interacting with the JSOC_ExportData webpage and downloading AR cutouts
+#
+# User should configure: executable path for firefox web browser driver 
+# (geckodriver) on line 71
+#
+# Copyright 2022 Ty Vincent, Laura Boucheron
+# This file is part of AR-flares
+# 
+# AR-flares is free software: you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation, either version 3 of the License, or (at your option) any later 
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY 
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with 
+# AR-flares. If not, see <https://www.gnu.org/licenses/>. 
 
-Script for interacting with the JSOC_ExportData webpage and downloading AR cutouts
-
-User should configure: executable path for firefox web browser driver 
-(geckodriver) on line 71
-
-@author: Ty
-"""
 from __future__ import division, print_function
 import os
 import os.path
