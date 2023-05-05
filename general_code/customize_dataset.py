@@ -1,20 +1,33 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-DESCRIPTION: This script reads the entire Fits AR Dataset files that are 
-             downloaded and stored in folders titled with AR numbers and parses
-             out data that is not ideal based on : 
-                 Number of NaN's in the image data, 
-                 Logitude of AR centroid, 
-                 Latitude of AR centroid
-             We also pre-pend the NOAA AR number to the front of each file name
-             The data can then be split into N number of classes using a 
-             user-defined function for classification, We allow flare size, 
-             and time window to be selected for class outputs
-Created on Fri Mar  8 10:16:37 2019
+# DESCRIPTION: This script reads the entire Fits AR Dataset files that are 
+#             downloaded and stored in folders titled with AR numbers and parses
+#              out data that is not ideal based on : 
+#                  Number of NaN's in the image data, 
+#                  Logitude of AR centroid, 
+#                  Latitude of AR centroid
+#              We also pre-pend the NOAA AR number to the front of each file name
+#              The data can then be split into N number of classes using a 
+#              user-defined function for classification, We allow flare size, 
+#              and time window to be selected for class outputs
+# Created on Fri Mar  8 10:16:37 2019
+#
+# References:
+# [1] <Put reference to dataset paper here>
+#
+# Copyright 2022 Ty Vincent, Laura Boucheron
+# This file is part of AR-flares
+# 
+# AR-flares is free software: you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation, either version 3 of the License, or (at your option) any later 
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY 
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with 
+# AR-flares. If not, see <https://www.gnu.org/licenses/>. 
 
-@author: tvincent
-"""
 import os
 import os.path
 import imageio
