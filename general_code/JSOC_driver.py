@@ -5,6 +5,9 @@
 # User should configure: executable path for firefox web browser driver 
 # (geckodriver) on line 71
 #
+# References:
+# [1] <Put reference to dataset paper here>
+#
 # Copyright 2022 Ty Vincent, Laura Boucheron
 # This file is part of AR-flares
 # 
