@@ -1,16 +1,34 @@
-"""
-This program loops through the Solar Region Summaries (SRS) to determine dates 
-an active region (AR) is visible on disk.  The SRS are assumed to be downloaded 
-to the SRS/ subdirectory underneath the specified SRS_directory variable set 
-at the beginning of this code.  The SRS are downloaded as one .txt file per 
-day.  We used Part I data in the SRS which detail those ARs with associated 
-sunspot structure.  For each NOAA AR appearing in SRS Part I, we store the NOAA 
-AR number, the date the AR first appears in the SRS, and accumulate the total 
-number of days the same AR appears in the SRS.  We store these data in a comma 
-separated text file ARList.txt where each line is of the format NNN,YYYMMDD,X, 
-where NNNN is the four digit NOAA AR number, YYYYMMDD is the initial date of 
-appearance, and X is an integer number of days.  
-"""
+# This program loops through the Solar Region Summaries (SRS) to determine dates 
+# an active region (AR) is visible on disk.  The SRS are assumed to be downloaded 
+# to the SRS/ subdirectory underneath the specified SRS_directory variable set 
+# at the beginning of this code.  The SRS are downloaded as one .txt file per 
+# day.  We used Part I data in the SRS which detail those ARs with associated 
+# sunspot structure.  For each NOAA AR appearing in SRS Part I, we store the NOAA 
+# AR number, the date the AR first appears in the SRS, and accumulate the total 
+# number of days the same AR appears in the SRS.  We store these data in a comma 
+# separated text file ARList.txt where each line is of the format NNN,YYYMMDD,X, 
+# where NNNN is the four digit NOAA AR number, YYYYMMDD is the initial date of 
+# appearance, and X is an integer number of days.  
+#
+#
+# References:
+# [1] <Put reference to dataset paper here>
+#
+# Copyright 2022 Ty Vincent, Laura Boucheron
+# This file is part of AR-flares
+# 
+# AR-flares is free software: you can redistribute it and/or modify it under 
+# the terms of the GNU General Public License as published by the Free Software 
+# Foundation, either version 3 of the License, or (at your option) any later 
+# version.
+#
+# AR-flares is distributed in the hope that it will be useful, but WITHOUT ANY 
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR 
+# A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with 
+# AR-flares. If not, see <https://www.gnu.org/licenses/>. 
+
 import os
 import glob
 
