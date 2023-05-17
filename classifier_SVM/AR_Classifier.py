@@ -33,7 +33,9 @@
 #         will not result in the same split as the files available on Dryad.
 #
 # References:
-# [1] <Put reference to dataset paper here>
+# [1] L. E. Boucheron, T. Vincent, J. A. Grajeda, and E. Wuest, "Solar Active 
+#     Region Magnetogram Image Dataset for Studies of Space Weather," arXiv 
+#     preprint arXiv:2305.09492, 2023.
 #
 # Copyright 2022 Laura Boucheron, Jeremy Grajeda, Ellery Wuest
 # This file is part of AR-flares
