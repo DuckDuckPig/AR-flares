@@ -41,7 +41,9 @@
 # [1] A. Al-Ghraibah, L. E. Boucheron, and R. T. J. McAteer, "An automated
 #     approach to ranking photospheric proxies of magnetic energy buildup,"
 #     Astronomy & Astrophysics, vol. 579, p. A64, 2015.
-# [2] <Put reference to dataset paper here>
+# [2] L. E. Boucheron, T. Vincent, J. A. Grajeda, and E. Wuest, "Solar Active 
+#     Region Magnetogram Image Dataset for Studies of Space Weather," arXiv 
+#     preprint arXiv:2305.09492, 2023.
 #
 # Copyright 2022 Laura Boucheron, Jeremy Grajeda, Ellery Wuest
 # This file is part of AR-flares
