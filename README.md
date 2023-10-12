@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/284776348.svg)](https://zenodo.org/badge/latestdoi/284776348)
 
-This github repository contains codes related to solar flare prediction using SDO HMI active regions.  This code is related to the data described in the Dryad repositories at [https://doi.org/10.5061/dryad.dv41ns23n](https://doi.org/10.5061/dryad.dv41ns23n) (reduced resolution preconfigured dataset), [https://doi.org/10.5061/dryad.jq2bvq898](https://doi.org/10.5061/dryad.jq2bvq898) (full resolution preconfigured dataset), and [https://doi.org/10.5061/dryad.qjq2bvqmj](https://doi.org/10.5061/dryad.qjq2bvqmj) (extra images removed in configuration process).
+This github repository contains codes related to solar flare prediction using SDO HMI active regions.  This code is related to the data described in the Dryad repositories at [https://doi.org/10.5061/dryad.jq2bvq898](https://doi.org/10.5061/dryad.jq2bvq898) (reduced resolution preconfigured dataset), [https://doi.org/10.5061/dryad.dv41ns23n](https://doi.org/10.5061/dryad.dv41ns23n) (full resolution preconfigured dataset), and [https://doi.org/10.5061/dryad.qjq2bvqmj](https://doi.org/10.5061/dryad.qjq2bvqmj) (extra images removed in configuration process).
 
 This repository contains code related to general manipulation of the SDO HMI dataset and the use of that for two machine learning problems for flare prediction: 1) a classical machine learning problem using extracted features of magnetic complexity and a support vector machine (SVM) classifier and 2) a deep learning problem using transfer learning on the VGG network.
 
