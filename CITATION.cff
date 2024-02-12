@@ -1,0 +1,57 @@
+﻿# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: AR-flares
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Laura E.
+    family-names: Boucheron
+    email: lboucher@nmsu.edu
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0000-0002-8187-1566'
+  - given-names: Ty
+    family-names: Vincent
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0001-9682-8667'
+  - given-names: Jeremy A.
+    family-names: Grajeda
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0008-3189-8200'
+  - given-names: Ellery
+    family-names: Wuest
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0000-4665-3128'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7596222
+repository-code: 'https://github.com/DuckDuckPig/AR-flares'
+preferred-citation:
+  type: article
+  - given-names: Laura E.
+    family-names: Boucheron
+    email: lboucher@nmsu.edu
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0000-0002-8187-1566'
+  - given-names: Ty
+    family-names: Vincent
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0001-9682-8667'
+  - given-names: Jeremy A.
+    family-names: Grajeda
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0008-3189-8200'
+  - given-names: Ellery
+    family-names: Wuest
+    affiliation: New Mexico State University
+    orcid: 'https://orcid.org/0009-0000-4665-3128'
+  doi: "10.1038/s41597-023-02628-8"
+  journal: "Scientific Data"
+  start: 825 # First page number
+  title: "Solar active region magnetogram image dataset for studies of space weather"
+  issue: 10
+  year: 2023
+
